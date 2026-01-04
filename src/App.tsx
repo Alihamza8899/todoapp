@@ -1,28 +1,34 @@
-import { useState } from "react";
-
 function App() {
-  const [count, setCount] = useState(0);
-  let headingStyle = {
-    color: "yellow",
-    backgroundColor: "blue",
-    fontSize: 30,
-  };
   return (
-    <main className="flex flex-col items-center gap-6 py-16 max-w-[1280px] mx-auto">
-      <div className="flex flex-row items-center gap-6">
-        <h1>Hello React & Tailwind!</h1>
+    <main className="flex flex-col items-center gap-6 py-16 w-[250px] h-[350px] mx-auto border-[2px] border-[wheat]">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log();
+        }}
+      >
+        <input
+          type="email"
+          className=" m-6 border-[1px] rounded-xs border-black"
+          placeholder="Email"
+          required
+          onChange={(e) => console.log(e.target.value)}
+        />
+        <input
+          type="password"
+          className="m-6 border-[1px] border-black rounded-xs"
+          placeholder="Password"
+          required
+          name="pws"
+          id="pws"
+        />
         <button
-          className="bg-sky-300 px-3 py-2 text-blue-600 bg-red-600 rounded hover:bg-sky-400"
-          onClick={(e) => {
-            let element = e.target.parentElement.style;
-            //console.log(element.alignContent);
-            element.color = headingStyle.color;
-            element.backgroundColor = headingStyle.backgroundColor;
-          }}
+          type="submit"
+          className="rounded-md w-[80%] py-4 mx-8 text-white bg-blue-500"
         >
-          Count: {count}
+          submit
         </button>
-      </div>
+      </form>
     </main>
   );
 }
