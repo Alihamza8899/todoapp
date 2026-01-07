@@ -2,13 +2,14 @@ import { useState } from "react";
 
 function Hello() {
   let [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    gender: "male",
+    agree: true,
+    country: "pakistan",
   });
   let changeValue = (e) => {
-    let { type, value } = e.target;
+    let { type, value, name, checked } = e.target;
     let prevData = formData;
-    setFormData({ ...prevData, [type]: value });
+    setFormData({ ...prevData, [name]: type == "checkbox" ? checked : value });
   };
 
   let handleSubmit = (e) => {
@@ -27,23 +28,31 @@ function Hello() {
             type="radio"
             name="gender"
             value="male"
+            onChange={changeValue}
           />
           Male
         </label>
         <label>
           <input
-            checked={formData.gender == "male"}
+            checked={formData.gender == "female"}
             type="radio"
             name="gender"
             value="female"
+            onChange={changeValue}
           />
           Female
         </label>
         <label>
-          <input checked={formData.agree} type="checkbox" name="agree" />I agree
+          <input
+            checked={formData.agree}
+            type="checkbox"
+            name="agree"
+            onChange={changeValue}
+          />
+          I agree
         </label>
         <label>
-          <select name="country">
+          <select name="country" onChange={changeValue}>
             <option value="pakistan">pakistan</option>
             <option value="usa">usa</option>
             <option value="india">india</option>
