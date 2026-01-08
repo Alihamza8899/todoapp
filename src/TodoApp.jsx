@@ -1,4 +1,4 @@
-let TodoApp = () => {
+odoApp = () => {
   return (
     <div className="min-w-[40%] border border-[black] m-16 p-8 rounded-lg bg-white ">
       <div className="pb-4">
@@ -11,7 +11,10 @@ let TodoApp = () => {
         </button>
       </div>
       <hr />
-      <div></div>
+      <div>
+        Task
+        <Task />
+      </div>
     </div>
   );
 };
