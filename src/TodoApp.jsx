@@ -13,6 +13,11 @@ let TodoApp = () => {
     setTaskList([...taskList, task]);
     setTask("");
   };
+  let deleteTask = (index) => {
+    console.log(taskList[index])
+    // taskList[index].pop()
+     //console.log(taskList);
+  }
   return (
     <div className="min-w-[40%] border border-[black] m-16 p-8 rounded-lg bg-white ">
       <div className="pb-4">
@@ -33,7 +38,7 @@ let TodoApp = () => {
       <div className="p-2 mt-2">
         <h1 className="font-[4px] p-2 ">Tasks:-</h1>
         {taskList.map((val, i) => {
-          return <Task task={val} key={i} />;
+          return <Task task={val} key={i} index={i} deleteTask={deleteTask}/>;
         })}
       </div>
     </div>
