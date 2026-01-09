@@ -1,4 +1,6 @@
-odoApp = () => {
+import Task from "./Task.jsx";
+
+let TodoApp = () => {
   return (
     <div className="min-w-[40%] border border-[black] m-16 p-8 rounded-lg bg-white ">
       <div className="pb-4">
@@ -11,8 +13,8 @@ odoApp = () => {
         </button>
       </div>
       <hr />
-      <div>
-        Task
+      <div className="p-2 mt-2">
+        <h1>Tasks:-</h1>
         <Task />
       </div>
     </div>
