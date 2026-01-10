@@ -10,16 +10,30 @@ let TodoApp = () => {
   };
   let addTask = (e) => {
     e.preventDefault();
-    setTaskList([...taskList, task]);
+    setTaskList([...taskList, { Task: task, completed: false }]);
     setTask("");
+    console.log(taskList);
   };
   let deleteTask = (index) => {
-    console.log(taskList[index])
+    let remainingTask = taskList.filter((val, i) => i != index);
+    setTaskList(remainingTask);
     // taskList[index].pop()
-     //console.log(taskList);
-  }
+  };
+  let completeTask = (index) => {
+    let comTask = taskList.splice(index, 1);
+    let updateTask = {
+      Task: comTask[0].Task,
+      completed: true,
+    };
+    setTaskList([updateTask, ...taskList]);
+
+    console.log(taskList);
+  };
   return (
-    <div className="min-w-[40%] border border-[black] m-16 p-8 rounded-lg bg-white ">
+    <div
+      className={` min-w-[40%] m-16 p-8 rounded-lg bg-white`}
+      style={{ boxShadow: "0px 10px 30px rgba(0,0,0,0.15)" }}
+    >
       <div className="pb-4">
         <input
           type="text"
@@ -36,9 +50,17 @@ let TodoApp = () => {
       </div>
       <hr />
       <div className="p-2 mt-2">
-        <h1 className="font-[4px] p-2 ">Tasks:-</h1>
+        <h1 className="text-2xl p-2 font-bold ">Tasks:-</h1>
         {taskList.map((val, i) => {
-          return <Task task={val} key={i} index={i} deleteTask={deleteTask}/>;
+          return (
+            <Task
+              task={val}
+              key={i}
+              index={i}
+              deleteTask={deleteTask}
+              completeTask={completeTask}
+            />
+          );
         })}
       </div>
     </div>
