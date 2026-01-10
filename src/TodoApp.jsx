@@ -31,7 +31,7 @@ let TodoApp = () => {
   };
   return (
     <div
-      className={` min-w-[40%] m-8 p-8 rounded-lg bg-white/90`}
+      className={` w-full md:w-1/2 m-2 md:m-8 py-8 px-2 md:px-8 rounded-lg bg-white/90 `}
       style={{ boxShadow: "0px 10px 10px rgba(0,0,0,0.15)" }}
     >
       <div className="pb-4">
