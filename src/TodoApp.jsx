@@ -31,8 +31,8 @@ let TodoApp = () => {
   };
   return (
     <div
-      className={` min-w-[40%] m-16 p-8 rounded-lg bg-white`}
-      style={{ boxShadow: "0px 10px 30px rgba(0,0,0,0.15)" }}
+      className={` min-w-[40%] m-8 p-8 rounded-lg bg-white/90`}
+      style={{ boxShadow: "0px 10px 10px rgba(0,0,0,0.15)" }}
     >
       <div className="pb-4">
         <input
@@ -43,7 +43,7 @@ let TodoApp = () => {
         />
         <button
           onClick={addTask}
-          className="text-white bg-yellow-500 px-2 py-[9px] ml-2 rounded-md hover:bg-white border-2 border-yellow-500 hover:text-black"
+          className="text-white bg-orange-500 px-2 py-[9px] ml-2 rounded-md hover:bg-orange-600 shadow-md active:scale-95 transition"
         >
           Enter
         </button>
