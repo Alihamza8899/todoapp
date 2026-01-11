@@ -1,7 +1,11 @@
 let Task = ({ task, index, deleteTask, completeTask }) => {
   return (
     <div className="flex justify-between p-2 my-2 bg-white border-[2px] border-[#eee] rounded-xl hover:bg-orange-50 transition cursor-pointer shadow-md">
-      <h3 className={task.completed ? "line-through text-gray-400" : ""}>
+      <h3
+        className={`${
+          task.completed ? "line-through text-gray-400" : ""
+        } max-w-[70%] break-words`}
+      >
         {task.Task}
       </h3>
       <div>

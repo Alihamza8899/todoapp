@@ -39,11 +39,11 @@ let TodoApp = () => {
           type="text"
           value={task}
           onChange={handleSubmit}
-          className="w-[75%] p-2  border-2 border-black rounded-md focus:border-yellow-500 focus:outline-none transition-all duration-3000"
+          className=" p-2 my-2 w-full md:w-[75%] border-2 border-black rounded-md focus:border-yellow-500 focus:outline-none transition-all duration-3000"
         />
         <button
           onClick={addTask}
-          className="text-white bg-orange-500 px-2 py-[9px] ml-2 rounded-md hover:bg-orange-600 shadow-md active:scale-95 transition"
+          className="w-[97%] md:w-[20%] text-white bg-orange-500 px-2 py-[9px] ml-2 rounded-md hover:bg-orange-600 shadow-md active:scale-95 transition"
         >
           Enter
         </button>
